@@ -7,8 +7,13 @@
  * @FilePath: /npm-node/src/index.js
  */
 'use strict';
+const os = require('os');
 
-const lib = require('./node/addon.node');
+if (os.platform() === 'linux') {
+    var lib = require('./node/serve-addon.node');
+} else {
+    var lib = require('./node/addon.node');
+}
 
 function linkv(appID, appSecret) {
     if (!appID || !appSecret) return;
@@ -18,6 +23,7 @@ function linkv(appID, appSecret) {
         init: function() {
             try {
                 const json = lib.decrypt(appID, appSecret);
+
                 linkv = JSON.parse(json);
                 return true;
             } catch (e) {
