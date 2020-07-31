@@ -10,9 +10,9 @@
 const os = require('os');
 
 if (os.platform() === 'linux') {
-    var lib = require('./node/serve-addon.node');
+    var lib = require('./node/libdecrypt.n.so.node');
 } else {
-    var lib = require('./node/addon.node');
+    var lib = require('./node/libdecrypt.n.dylib.node');
 }
 
 function linkv(appID, appSecret) {
