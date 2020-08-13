@@ -15,7 +15,7 @@ LINKV SDK for the nodejs programming language.
 
 ```js
 
-const Linkv = require('../src/index');
+const Linkv = require('linkv');
 
 const appID = 'rbaiHjNHQyVprPCBSHevvVvuNynNeTvp';
 const appSecret =
