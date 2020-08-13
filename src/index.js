@@ -1,46 +1,28 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 14:25:48
- * @LastEditTime: 2020-07-29 22:49:48
+ * @LastEditTime: 2020-08-13 16:06:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /npm-node/src/index.js
  */
 'use strict';
-const os = require('os');
 
-if (os.platform() === 'linux') {
-    var lib = require('./node/libdecrypt.n.so.node');
-} else {
-    var lib = require('./node/libdecrypt.n.dylib.node');
-}
+const decrypt = require('./lib/decrypt');
+const live = require('./lib/live');
 
-function linkv(appID, appSecret) {
+module.exports = function (appID, appSecret) {
     if (!appID || !appSecret) return;
-    let linkv = {};
+    this.appID = appID;
+    this.appSecret = appSecret;
 
-    return {
-        init: function() {
-            try {
-                const json = lib.decrypt(appID, appSecret);
+    const linkv = decrypt(appID, appSecret);
 
-                linkv = JSON.parse(json);
-                return true;
-            } catch (e) {
-                return e
-            }
-        },
-        im: {
-            getConfig: function() {
-                return linkv.im
-            }
-        },
-        rtc: {
-            getConfig: function() {
-                return linkv.rtc
-            }
-        }
+    const { im, rtc, sensor } = linkv;
+
+    this.im = function () {}
+    this.rtc = function () {}
+    this.live = function () {
+        return live(sensor)
     }
 }
-
-module.exports = linkv;
