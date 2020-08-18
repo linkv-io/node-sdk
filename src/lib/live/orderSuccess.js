@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-10 15:11:40
- * @LastEditTime: 2020-08-13 15:21:32
+ * @LastEditTime: 2020-08-18 12:02:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/src/lib/live.js
@@ -38,7 +38,7 @@ module.exports = function (sensor, data) {
             nonce_str,
             app_id: app_key,
             uid: data.liveOpenID,
-            request_id: code.request_id,
+            request_id: `${app_key.slice(2)}-${code.request_id}`,
             type: data.orderType,
             value: data.gold,
             money: data.money,

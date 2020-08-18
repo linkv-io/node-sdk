@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-10 15:11:40
- * @LastEditTime: 2020-08-13 16:07:03
+ * @LastEditTime: 2020-08-18 14:38:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/src/lib/live.js
@@ -38,7 +38,7 @@ module.exports = function (sensor, data) {
             nonce_str,
             app_id: app_key,
             uid: data.liveOpenID,
-            request_id: code.request_id,
+            request_id: `${app_key.slice(2)}-${code.request_id}`,
             type: data.orderType,
             value: data.gold,
             expriation: (Date.now().toString().slice(0, -3)) + (data.expr * 86400),
