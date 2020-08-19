@@ -1,12 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 17:34:33
- * @LastEditTime: 2020-08-18 14:39:02
+ * @LastEditTime: 2020-08-19 17:27:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/example/index.js
  */
-const Linkv = require('../src/index');
+// const Linkv = require('../src/index');
+const Linkv = require('linkv');
 
 const appID = 'rbaiHjNHQyVprPCBSHevvVvuNynNeTvp';
 const appSecret =
