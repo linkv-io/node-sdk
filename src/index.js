@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 14:25:48
- * @LastEditTime: 2020-08-13 16:06:38
+ * @LastEditTime: 2020-08-25 14:33:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /npm-node/src/index.js
@@ -9,7 +9,8 @@
 'use strict';
 
 const decrypt = require('./lib/decrypt');
-const live = require('./lib/live');
+const liveExample = require('./lib/live');
+const rtcExample = require('./lib/rtc');
 
 module.exports = function (appID, appSecret) {
     if (!appID || !appSecret) return;
@@ -20,9 +21,11 @@ module.exports = function (appID, appSecret) {
 
     const { im, rtc, sensor } = linkv;
 
-    this.im = function () {}
-    this.rtc = function () {}
+    this.im = function () {};
+    this.rtc = function () {
+        return rtcExample(rtc);
+    };
     this.live = function () {
-        return live(sensor)
+        return liveExample(sensor);
     }
-}
+};

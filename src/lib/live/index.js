@@ -12,12 +12,11 @@ const orderSuccess = require('./orderSuccess');
 const changeGold = require('./changeGold');
 const getUserTokens = require('./getUserTokens');
 
-module.exports = function (sensor) {
-    return {
-        thgetToken: (data = {}) => thgetToken(sensor, data),
-        orderSuccess: (data = {}) => orderSuccess(sensor, data),
-        changeGold: (data = {}) => changeGold(sensor, data),
-        getUserTokens: (data = {}) => getUserTokens(sensor, data),
-    }
-}
-
+module.exports = function(sensor) {
+	return {
+		thgetToken: (data = {}) => thgetToken(sensor, data),
+		orderSuccess: (data = {}) => orderSuccess(sensor, data),
+		changeGold: (data = {}) => changeGold(sensor, data),
+		getUserTokens: (data = {}) => getUserTokens(sensor, data),
+	}
+};

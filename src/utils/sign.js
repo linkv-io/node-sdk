@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-10 15:53:53
- * @LastEditTime: 2020-08-11 12:14:07
+ * @LastEditTime: 2020-08-25 15:05:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/src/utils/sign.js

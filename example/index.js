@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 17:34:33
- * @LastEditTime: 2020-08-19 17:27:01
+ * @LastEditTime: 2020-08-25 15:08:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/example/index.js
@@ -17,43 +17,60 @@ const res = new Linkv(appID, appSecret);
 
 const { im, rtc, live } = res;
 
-const sensor = live();
+//  rtc
+const rtcController = rtc();
+// 获取认证信息
+const authData = rtcController.getAuth();
+console.log(authData);
+
+//  live
+const liveController = live();
 
 const userId = 'test-dart-tob';
 const aid = 'test';
 
 // 获取token
-sensor.thgetToken({
-	userId, aid
+liveController.thgetToken({
+	userId,
+	aid
 }).then(function (res) {
 	console.log(res)
-})
+});
 
 const liveOpenID = '1291371456374120449';
-const orderType = 1;  // 1 订单增加金币 2 订单删除金币
+const orderType = 1; // 1 订单增加金币 2 订单删除金币
 const gold = 100;
 const expr = 3;
 const money = 1;
 const platformType = 'ios'; // ios android h5
-const orderID = ''
+const orderID = '';
 
 // 完成订单
-sensor.orderSuccess({
-	liveOpenID, orderType, gold, expr, money, platformType, orderID
+liveController.orderSuccess({
+	liveOpenID,
+	orderType,
+	gold,
+	expr,
+	money,
+	platformType,
+	orderID
 }).then(function (res) {
 	console.log(res)
-})
+});
 
 // 修改金币
-sensor.changeGold({
-	liveOpenID, orderType, gold, expr
+liveController.changeGold({
+	liveOpenID,
+	orderType,
+	gold,
+	expr
 }).then(function (res) {
 	console.log(res)
-})
+});
 
 // 查询金币余额
-sensor.getUserTokens({
+liveController.getUserTokens({
 	liveOpenID
 }).then(function (res) {
 	console.log(res)
-})
+});
