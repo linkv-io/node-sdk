@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 17:34:33
- * @LastEditTime: 2020-08-25 15:08:38
+ * @LastEditTime: 2020-08-26 11:05:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/example/index.js
@@ -15,7 +15,11 @@ const appSecret =
 
 const res = new Linkv(appID, appSecret);
 
-const { im, rtc, live } = res;
+const {
+	im,
+	rtc,
+	live
+} = res;
 
 //  rtc
 const rtcController = rtc();
@@ -33,7 +37,7 @@ const aid = 'test';
 liveController.thgetToken({
 	userId,
 	aid
-}).then(function (res) {
+}).then(function(res) {
 	console.log(res)
 });
 
@@ -54,7 +58,7 @@ liveController.orderSuccess({
 	money,
 	platformType,
 	orderID
-}).then(function (res) {
+}).then(function(res) {
 	console.log(res)
 });
 
@@ -64,13 +68,13 @@ liveController.changeGold({
 	orderType,
 	gold,
 	expr
-}).then(function (res) {
+}).then(function(res) {
 	console.log(res)
 });
 
 // 查询金币余额
 liveController.getUserTokens({
 	liveOpenID
-}).then(function (res) {
+}).then(function(res) {
 	console.log(res)
 });
