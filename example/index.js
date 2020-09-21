@@ -6,7 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/example/index.js
  */
-// const Linkv = require('../src/index');
 const Linkv = require('linkv');
 
 const appID = 'rbaiHjNHQyVprPCBSHevvVvuNynNeTvp';
@@ -21,13 +20,32 @@ const {
 	live
 } = res;
 
-//  rtc
+//************ im *************
+const imController = im();
+// 获取token
+const userid = '738131192624578560';
+imController.getToken(userid).then(function (token) {
+	console.log(token);
+});
+
+// 单聊消息发送
+const params = {
+	fromUserId: 'python2',
+	toUserId: '123456',
+	objectName: 'RC:textMsg',
+	content: 'I\'m python2'
+};
+imController.pushConverseData(params).then(function (res) {
+	console.log(res);
+});
+
+//************ rtc *************
 const rtcController = rtc();
 // 获取认证信息
 const authData = rtcController.getAuth();
 console.log(authData);
 
-//  live
+//************ live *************
 const liveController = live();
 
 const userId = 'test-dart-tob';

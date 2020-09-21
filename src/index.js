@@ -11,6 +11,7 @@
 const decrypt = require('./lib/decrypt');
 const liveExample = require('./lib/live');
 const rtcExample = require('./lib/rtc');
+const imExample = require('./lib/im');
 
 module.exports = function (appID, appSecret) {
     if (!appID || !appSecret) return;
@@ -21,7 +22,9 @@ module.exports = function (appID, appSecret) {
 
     const { im, rtc, sensor } = linkv;
 
-    this.im = function () {};
+    this.im = function () {
+        return imExample(im);
+    };
     this.rtc = function () {
         return rtcExample(rtc);
     };

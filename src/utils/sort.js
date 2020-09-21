@@ -19,7 +19,7 @@ module.exports = function (obj, nonce_str) {
         if (obj[key]) {
             _strArray.push(`${key}=${obj[key]}`)
         }
-    })
+    });
 
     return _strArray.join('&');
-}
+};

@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-08-25 14:19:47
- * @LastEditTime: 2020-08-26 11:05:04
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /node-sdk/src/lib/rtc/getAuth.js
- */
 const utils = require('../../utils/utils');
 const createHmac = require('crypto').createHmac;
 
