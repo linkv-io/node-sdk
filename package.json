@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "needle": "^2.5.0",
-    "linkv": "git://github.com/linkv-io/node-sdk.git#0.4.6"
+    "linkv": "git://github.com/linkv-io/node-sdk.git#0.4.7"
   }
 }

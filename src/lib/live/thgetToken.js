@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-10 15:11:40
- * @LastEditTime: 2020-08-13 16:07:16
+ * @LastEditTime: 2021-06-16 16:25:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node-sdk/src/lib/live.js
@@ -24,7 +24,7 @@ module.exports = function (sensor, data) {
         const path = '/open/v0/thGetToken';
         const URL = `${url}${path}`;
 
-        const nonce_str = code.nonce_str;
+        const nonce_str = code.nonce_str();
         let params = {
             ...data,
             nonce_str,
