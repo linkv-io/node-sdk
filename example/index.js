@@ -30,10 +30,10 @@ imController.getToken(userid).then(function(token) {
 
 // 单聊消息发送
 const params = {
-	fromUserId: 'python2',
+	fromUserId: 'nodejs',
 	toUserId: '123456',
 	objectName: 'RC:textMsg',
-	content: 'I\'m python2'
+	content: 'I\'m nodejs'
 };
 imController.pushConverseData(params).then(function(res) {
 	console.log(res);
