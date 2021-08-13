@@ -7,18 +7,20 @@
  * @FilePath: /node-sdk/src/lib/init.js
  */
 const os = require('os');
+let lib = null;
 
 if (os.platform() === 'linux') {
-    var lib = require('../node/libdecrypt.n.so.node');
+    lib = require('../node/libdecrypt.n.so.node');
 } else {
-    var lib = require('../node/libdecrypt.n.dylib.node');
+    lib = require('../node/libdecrypt.n.dylib.node');
 }
 
-module.exports = function (appID, appSecret) {
-
+module.exports = (appID, appSecret) => {
     if (!appID || !appSecret) return;
-
     try {
+        if (lib === null) {
+            return
+        }
         const json = lib.decrypt(appID, appSecret);
         return JSON.parse(json);
     } catch (e) {

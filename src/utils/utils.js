@@ -11,7 +11,9 @@ function get_typeof(params) {
 }
 
 function getNow() {
-    return Date.now().toString().slice(0, -3);
+    let x = Date.now().toString().slice(0, -3);
+    console.log(x);
+    return x;
 }
 
 module.exports = {

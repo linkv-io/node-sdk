@@ -12,8 +12,20 @@ function getRandom(num) {
     return Math.random().toString(36).substr(2, num);
 }
 
+const nonce_str = () => {
+    return `${getRandom(8)}${utils.getNow()}${getRandom(8)}`
+}
+
+const request_id = () => {
+    return getRandom(9)
+}
+
+const im_nonce = () => {
+    return getRandom(8)
+}
+
 module.exports = {
-    nonce_str:  () => `${getRandom(8)}${utils.getNow()}${getRandom(8)}`,
-    request_id: getRandom(9),
-    im_nonce: getRandom(8),
+    nonce_str:  nonce_str,
+    request_id: request_id,
+    im_nonce: im_nonce,
 };

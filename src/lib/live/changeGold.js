@@ -38,7 +38,7 @@ module.exports = function (sensor, data) {
             nonce_str,
             app_id: app_key,
             uid: data.liveOpenID,
-            request_id: `${app_key.slice(2)}-${code.request_id}`,
+            request_id: `${app_key.slice(2)}-${code.request_id()}`,
             type: data.orderType,
             value: data.gold,
             expriation: (Date.now().toString().slice(0, -3)) + (data.expr * 86400),

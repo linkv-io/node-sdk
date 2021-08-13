@@ -29,8 +29,7 @@ module.exports = function (im, data) {
         const path = '/api/rest/message/converse/pushConverseData';
         const URL = `${url}${path}`;
 
-        // const nonce = code.im_nonce;
-        const nonce = 'dsaldassd';
+        const nonce = code.im_nonce();
         const timestamp = Date.now().toString().slice(0, -3);
         const cmimToken = getCmimToken(nonce, app_secret, timestamp);
         const sign = getImSign(app_id, app_key, timestamp, nonce);
