@@ -1,7 +1,7 @@
 {
-  "name": "linkv-node-sdk",
-  "version": "0.4.9",
-  "description": "server sdk for node (linkv)",
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
   "engines": {
     "node": "12.x"
   },
@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "needle": "^2.5.0"
+    "linkv": "git://github.com/linkv-io/node-sdk.git#0.4.9"
   }
 }

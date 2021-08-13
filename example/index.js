@@ -8,9 +8,9 @@
  */
 const Linkv = require('linkv');
 
-const appID = 'XYWAhtXcWoApAUCXeTZjbcSvdrrunAhj';
+const appID = 'rbaiHjNHQyVprPCBSHevvVvuNynNeTvp';
 const appSecret =
-	'06AFDAEA142A96BA62280A6BEFF439B75C5F76F6368A2E2BFB8054CDF7EB90AA950540CCC73A02761E26F0C0090E21B811D76D93959D10804849BB8EEF3A0B0804F6D3F6DE9E36C9C5D1551693E9AFD725A6F1DED6EA8DD60C680F298DF50BB2218440FE0E77773682156939098AE415F66EF3AAD085893A21B7AF40818EC2323C5273CABB44C6945D1B8F14784226BA0AB8E4B6E0003E5B8478691ACE5883CAEC6A377E18B92E6F01573958F477310E94668FBC258A5C9B193F971FEBCB8FD8E96B42157FFA08B0667E65C68998C2587D4D4372DD6CC3C1543A079C07DEA1CCAA484F621092FED617F7E7DA3E3D9CAC9A66C7701B16F2B05AE320BFCF028BB3A98539115BFDFDC5362932C393BDF4A89391A4F13B9E778AE7C7B85E56CECF0334BAB945F60AB849B722FCD76E89D47EBD4AE88E589C838B558929726C604332BE2C7C91B9AA9F0B7E0D30D6435484EA4CAA6BBCB4088B665D1F10A24865E77142C61E92F48BF8D6AB2D33EF38673060E493EF79EDE7034FBC4E754F354B3B73';
+	'87EA975D424238D0A08F772321169816DD016667D5BB577EBAEB820516698416E4F94C28CB55E9FD8E010260E6C8A177C0B078FC098BCF2E9E7D4A9A71BF1EF8FBE49E05E5FC5A6A35C6550592C1DB96DF83F758EAFBC5B342D5D04C9D92B1A82A76E3756E83A4466DA22635A8A9F88901631B5BBBABC8A94577D66E8B000F4B179DA99BAA5E674E4F793D9E60EEF1C3B757006459ABB5E6315E370461EBC8E6B0A7523CA0032D33B5C0CF83264C9D83517C1C94CAB3F48B8D5062F5569D9793982455277C16F183DAE7B6C271F930A160A6CF07139712A9D3ABF85E05F8721B8BB6CAC1C23980227A1D5F31D23FA6567578AEEB6B124AF8FF76040F9598DDC9DE0DA44EF34BBB01B53E2B4713D2D701A9F913BE56F9F5B9B7D8D2006CA910D8BFA0C34C619AB0EEBDAA474E67115532511686992E88C4E32E86D82736B2FE141E9037381757ED02C7D82CA8FC9245700040D7E1E200029416295D891D388D69AC5197A65121B60D42040393FB42BC2769B1E2F649A7A17083F6AB2B1BE6E993';
 
 const res = new Linkv(appID, appSecret);
 
@@ -20,30 +20,30 @@ const {
 	live
 } = res;
 
-// //************ im *************
-// const imController = im();
-// // 获取token
-// const userid = '738131192624578560';
-// imController.getToken(userid).then(function(token) {
-// 	console.log(token);
-// });
-//
-// // 单聊消息发送
-// const params = {
-// 	fromUserId: 'nodejs',
-// 	toUserId: '123456',
-// 	objectName: 'RC:textMsg',
-// 	content: 'I\'m nodejs'
-// };
-// imController.pushConverseData(params).then(function(res) {
-// 	console.log(res);
-// });
-//
-// //************ rtc *************
-// const rtcController = rtc();
-// // 获取认证信息
-// const authData = rtcController.getAuth();
-// console.log(authData);
+//************ im *************
+const imController = im();
+// 获取token
+const userid = '738131192624578560';
+imController.getToken(userid).then(function(token) {
+	console.log(token);
+});
+
+// 单聊消息发送
+const params = {
+	fromUserId: 'nodejs',
+	toUserId: '123456',
+	objectName: 'RC:textMsg',
+	content: 'I\'m nodejs'
+};
+imController.pushConverseData(params).then(function(res) {
+	console.log(res);
+});
+
+//************ rtc *************
+const rtcController = rtc();
+// 获取认证信息
+const authData = rtcController.getAuth();
+console.log(authData);
 
 //************ live *************
 const liveController = live();
@@ -70,40 +70,40 @@ liveController.thgetToken({
 	});
 });
 
-// const liveOpenID = '1291371456374120449';
-// const orderType = 1; // 1 订单增加金币 2 订单删除金币
-// const gold = 100;
-// const expr = 3;
-// const money = 1;
-// const platformType = 'ios'; // ios android h5
-// const orderID = '';
-//
-// // 完成订单
-// liveController.orderSuccess({
-// 	liveOpenID,
-// 	orderType,
-// 	gold,
-// 	expr,
-// 	money,
-// 	platformType,
-// 	orderID
-// }).then(function(res) {
-// 	console.log(res)
-// });
-//
-// // 修改金币
-// liveController.changeGold({
-// 	liveOpenID,
-// 	orderType,
-// 	gold,
-// 	expr
-// }).then(function(res) {
-// 	console.log(res)
-// });
-//
-// // 查询金币余额
-// liveController.getUserTokens({
-// 	liveOpenID
-// }).then(function(res) {
-// 	console.log(res)
-// });
+const liveOpenID = '1291371456374120449';
+const orderType = 1; // 1 订单增加金币 2 订单删除金币
+const gold = 100;
+const expr = 3;
+const money = 1;
+const platformType = 'ios'; // ios android h5
+const orderID = '';
+
+// 完成订单
+liveController.orderSuccess({
+	liveOpenID,
+	orderType,
+	gold,
+	expr,
+	money,
+	platformType,
+	orderID
+}).then(function(res) {
+	console.log(res)
+});
+
+// 修改金币
+liveController.changeGold({
+	liveOpenID,
+	orderType,
+	gold,
+	expr
+}).then(function(res) {
+	console.log(res)
+});
+
+// 查询金币余额
+liveController.getUserTokens({
+	liveOpenID
+}).then(function(res) {
+	console.log(res)
+});
