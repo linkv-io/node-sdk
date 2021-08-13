@@ -7,6 +7,7 @@
  * @FilePath: /node-sdk/src/lib/live.js
  */
 const needle = require('needle');
+const code = require('../../utils/code');
 const getCmimToken = require('../../utils/cmimToken');
 const getImSign = require('../../utils/imSign');
 
