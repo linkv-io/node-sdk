@@ -2,6 +2,7 @@
   "name": "linkv-node-sdk",
   "version": "0.4.9",
   "description": "server sdk for node (linkv)",
+  "main": "./src/index.js",
   "engines": {
     "node": "12.x"
   },
