@@ -11,6 +11,12 @@
 
 LINKV SDK for the nodejs programming language.
 
+## Install
+
+```shell
+npm install github:linkv-io/node-sdk
+```
+
 ## Usage
 
 ```js
